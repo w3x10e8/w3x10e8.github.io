@@ -182,7 +182,7 @@ audio {
 
 <body id="top">
 <div id="fullpage" >
-<div class="section" id="section0">
+<div class="section" data-anchor="sec1" id="section0">
 	<!-- header
    ================================================== -->
    <header>
@@ -283,7 +283,7 @@ audio {
 			   	<div class="scroll-icon">
 
 					   <p class="scroll-text">Scroll For More Info</p>
-					   <a href="#info" class="smoothscroll">
+					   <a href="#sec2" class="smoothscroll">
 					   	<div class="mouse"></div>
 					   </a>
 				   	<div class="end-top"></div>
@@ -297,7 +297,7 @@ audio {
 
    </section> <!-- /home -->
 </div>
-<div class="section" id="section1">
+<div class="section" data-anchor="sec2"  id="section1">
    <!-- info
    ================================================== -->
    <section id="info">
@@ -444,7 +444,7 @@ audio {
    </section> <!-- /info -->
 
    </div>
-<div class="section" id="section2">
+<div class="section" data-anchor="sec3"  id="section2">
 
    <!-- CTA Section
    ================================================== -->
@@ -472,7 +472,7 @@ audio {
 
    </section> <!-- /cta -->
 </div>
-<div class="section" id="section3">
+<div class="section" data-anchor="sec4"  id="section3">
    <!-- footer
    ================================================== -->
    <footer>
@@ -530,6 +530,7 @@ audio {
 <script type="text/javascript">
             $(document).ready(function(){
                 $("#fullpage").fullpage({
+				anchors: ['sec1', 'sec2', 'sec3', 'sec4'],
                     keyboardScrolling: true,
                     option: true,
                     scrollingSpeed: 700,
