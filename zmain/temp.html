@@ -147,7 +147,46 @@ i {
 audio {
   visibility: hidden;
 }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
 
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
   </style>
 
    <!--- basic page needs
@@ -181,6 +220,10 @@ audio {
 </head>
 
 <body id="top">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<iframe src="game.html" style="height:97%;width:90%;border:none;"></iframe>
+</div>
 <div id="fullpage" >
 <div class="section" data-anchor="sec1" id="section0">
 	<!-- header
@@ -302,6 +345,7 @@ audio {
    ================================================== -->
    <section id="info">
 
+   	<div class="info-overlay"></div>
 
    	<div class="row">
    		<div class="col-twelve tabs-wrap">
@@ -354,60 +398,8 @@ audio {
 						<div class="tab-entry">
 
 							<div class="row tab-entry-intro">
-					   		<div class="col-twelve with-bottom-line">
-
-					   			<h1>Registration</h1>
-
-					   			<p class="lead">Form needs to be edited and colour scheme changed</p>
-
-					   		</div>
+					   		<span style="font-size:30px;cursor:pointer" onclick="openNav()">Play</span>
 					   	</div> <!-- /tab-content-intro -->
-
-					   	<div class="row form-wrap tab-entry-content">
-					   		<div class="col-twelve">
-
-					            <!-- form -->
-					            <form name="contactForm" id="contactForm" method="post" action="">
-					      			<fieldset>
-
-					                  <div class="form-field">
-					 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-					                  </div>
-					                  <div class="form-field">
-						      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-						               </div>
-					                  <div class="form-field">
-						     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-						               </div>
-					                  <div class="form-field">
-						                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-						               </div>
-					                 <div class="form-field">
-					                     <button class="submitForm button button-primary large">Submit</button>
-
-					                     <div id="submit-loader">
-					                        <div class="text-loader">Sending...</div>
-					       				      <div class="s-loader">
-													  	<div class="bounce1"></div>
-													  	<div class="bounce2"></div>
-													  	<div class="bounce3"></div>
-													</div>
-												</div><!-- submit-loader -->
-					                  </div>
-
-					      			</fieldset>
-					      		</form> <!-- /form -->
-
-					            <!-- contact-warning -->
-					            <div id="message-warning">
-					            </div>
-					            <!-- contact-success -->
-					      		<div id="message-success">
-					               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-					      		</div>
-
-					         </div> <!-- /col-twelve -->
-					   	</div> <!-- /row contact-form -->
 
 						</div> <!-- /tab-entry -->
 
@@ -612,7 +604,15 @@ $(this).find('.c_wrap').css({"display":"none",})
    <script type="text/javascript" src="js/scrolloverflow.js"></script>
 
 <script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
 
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </body>
 
 </html>
