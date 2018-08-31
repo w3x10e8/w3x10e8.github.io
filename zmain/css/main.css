@@ -1227,7 +1227,6 @@ header .social-links ul li a:focus {
 #info {
 	background: #FFFFFF;
 	background-image: url(../images/info-bg.png);
-	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
@@ -1255,7 +1254,7 @@ header .social-links ul li a:focus {
 }
 #info .tabs-wrap ul.tabs {
 	display: inline-block;
-	margin: 0 0 6rem 0;
+	margin: 0 0 3rem 0;
 	padding: 0;
 }
 #info .tabs-wrap ul.tabs li {
@@ -1299,7 +1298,7 @@ header .social-links ul li a:focus {
 	display: none;
 }
 #info .tabs-wrap .tab-entry-intro {
-	max-width: 700px;
+	max-width: 800px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
