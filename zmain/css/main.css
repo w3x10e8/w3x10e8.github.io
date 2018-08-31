@@ -120,6 +120,7 @@ p.lead {
     box-shadow: 0 0 12px 5px #747373;
 	padding:4%;
 	font-family: "roboto-light", serif;
+	font-weight:500;
 	font-size: 2rem;
 	line-height: 1.8;
 	color: #4d4d4d;
@@ -1223,14 +1224,14 @@ header .social-links ul li a:focus {
  * 10. info - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
-#info {
-	background: #FFFFFF;
-	background-image: url(../images/info-bg.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
+#section1{
+	    background-image: url(../images/info-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 759px;
+    background-size: cover;
+}
+ #info {
 	position: relative;
 	color: rgba(17, 17, 17, 0.7);
 }
@@ -1240,8 +1241,6 @@ header .social-links ul li a:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #FFFFFF;
-	opacity: .7;
 }
 
 /* tabs
