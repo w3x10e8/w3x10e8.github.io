@@ -114,13 +114,13 @@ p img {
 p.lead {
 	margin:2%;
 	top: 60px;
-	background: #f5deb3c7;
+	background:rgba(255, 255, 255, 0.7803921568627451);
     color: #383838;
     border-radius: 4px;
     box-shadow: 0 0 12px 5px #747373;
 	padding:4%;
 	font-family: "roboto-light", serif;
-	font-weight:500;
+	font-weight:600;
 	font-size: 2rem;
 	line-height: 1.8;
 	color: #4d4d4d;
@@ -1302,7 +1302,7 @@ header .social-links ul li a:focus {
 	line-height: 1.267;
 }
 #info .tabs-wrap .tab-entry-intro p.lead {
-	color: rgba(17, 17, 17, 0.5);
+	color: rgba(17, 17, 17);
 }
 #info .tabs-wrap .tab-entry-intro .with-bottom-line {
 	position: relative;
