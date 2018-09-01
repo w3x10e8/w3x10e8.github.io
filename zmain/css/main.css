@@ -1673,13 +1673,13 @@ header .social-links ul li a:focus {
  * ------------------------------------------------------------------- */
 footer {
 	text-align: center;
-	padding-bottom: 12rem;
+	padding-bottom: 8rem;
 	position: relative;
 }
 
 footer .social-wrap {
 	background: #151515;
-	margin-bottom: 4.8rem;
+	margin-bottom: 1.8rem;
 }
 
 footer .footer-social-list {
@@ -1741,8 +1741,6 @@ footer .footer-bottom .footer-logo {
 footer .copyright {
 	display: block;
 	position: relative;
-	padding-top: 3.6rem;
-	margin-top: 1.5rem;
 }
 
 footer .copyright::before {
@@ -1751,7 +1749,7 @@ footer .copyright::before {
 	height: 3px;
 	position: absolute;
 	left: 50%;
-	top: 0;
+	bottom: -2%;
 	margin-left: -60px;
 	background: rgba(17, 17, 17, 0.3);
 }
