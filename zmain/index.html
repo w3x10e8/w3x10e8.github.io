@@ -9,6 +9,8 @@
 
 .retro-button{width: 100%;height: 70px;background-image: url(./images/button.png);padding: 13px 30px;background-size: contain;font-size: 1em;background-repeat: no-repeat;margin-bottom: 12px;font-family: 'Press Start 2P'}
 .retro-button:hover{background-image:url(./images/button_hover.png)}
+.retro-button:active{background-image:url(./images/button_pressed.png)}
+
 
 
 
@@ -147,6 +149,265 @@ i {
 audio {
   visibility: hidden;
 }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+.video-play-button {
+     /* position: absolute; */
+    z-index: 10;
+    /* top: 50%; */
+    /* left: 50%; */
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    display: block;
+    width: 32px;
+    height: 44px;
+    /* margin-top: 50px; */
+    margin: 0 auto;
+    /* margin-bottom: -20px; */
+    /* background: #fa183d; */
+    border-radius: 50%;
+    padding: 18px 20px 18px 28px;
+}
+
+.video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #ba1f24;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #fa183d;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video-play-button:hover:after {
+  background-color: darken(#fa183d, 10%);
+}
+
+.video-play-button img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid #fff;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.video-overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.80);
+  opacity: 0;
+  transition: all ease 500ms;
+}
+
+.video-overlay.open {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.video-overlay-close {
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+  color: #fa183d;
+}
+
+.video-overlay iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* width: 90%; */
+  /* height: auto; */
+  box-shadow: 0 0 15px rgba(0,0,0,0.75);
+}
+
+
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
 
   </style>
 
@@ -166,7 +427,8 @@ audio {
    <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/vendor.css">
-
+   <!--Scroll-->
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
    <!-- script
    ================================================== -->
 	<script src="js/modernizr.js"></script>
@@ -180,7 +442,12 @@ audio {
 </head>
 
 <body id="top">
-
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<iframe src="game.html" style="height:97%;width:90%;border:none;"></iframe>
+</div>
+<div id="fullpage" >
+<div class="section" data-anchor="sec1" id="section0">
 	<!-- header
    ================================================== -->
    <header>
@@ -220,12 +487,9 @@ audio {
 		   	<div class="row">
 		   		<div class="col-twelve">
 
-<div style="margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;text-align:center;">
 
-            			<section>
+
+            			<section style="margin-right: auto;padding-top:8%;margin-left: auto;padding-left: 15px;padding-right: 15px;text-align:center;">
             				<span class="cassette">
             					<span class="inner_1">
             						<span class="inner_2">
@@ -241,7 +505,7 @@ audio {
                       </div>
             				</span>
             			</section>
-</div>
+
 
 <!--
 		   			<div id="counter">
@@ -258,19 +522,19 @@ audio {
 			  			<div class="bottom-text">
 
                   <div class="col-six">
-<div class="retro-button">Events</div>
-<div class="retro-button">Register</div>
-<div class="retro-button">About Us</div>
+<a href="#"><div class="retro-button">Events</div></a>
+<a href="#"><div class="retro-button">Register</div></a>
+<a href="#"><div class="retro-button">About Us</div></a>
 
                 </div>
                   <div class="col-six" style="text-align:right;">
 
 
-                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Events</h3></a>
+                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Sponsors</h3></a>
                     <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> College Representative</h3></a>
-                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Register</h3></a>
-                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> About Us</h3></a>
-                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Contact Us</h3></a>
+                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Find US</h3></a>
+                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Initiatives</h3></a>
+                    <a href="#"><h3 style="font-family: 'Press Start 2P', cursive !important;color:#fff;"> <span style="display:none;" class="c_wrap"><span class="Imag2" >> </span></span> Pronites</h3></a>
 
 
                   </div>
@@ -284,7 +548,7 @@ audio {
 			   	<div class="scroll-icon">
 
 					   <p class="scroll-text">Scroll For More Info</p>
-					   <a href="#info" class="smoothscroll">
+					   <a href="#sec2" class="smoothscroll">
 					   	<div class="mouse"></div>
 					   </a>
 				   	<div class="end-top"></div>
@@ -297,8 +561,8 @@ audio {
 		</div> <!-- /content-wrap -->
 
    </section> <!-- /home -->
-
-
+</div>
+<div class="section" data-anchor="sec2"  id="section1">
    <!-- info
    ================================================== -->
    <section id="info">
@@ -307,14 +571,11 @@ audio {
 
    	<div class="row">
    		<div class="col-twelve tabs-wrap">
-
-   			<ul class="tabs">
-   				<li class="active" data-id="tab-about"><i class="icon-user"></i><span>About</span></li>
-   				<li data-id="tab-contact"><i class="icon-mail"></i><span>Register</span></li>
-					<li data-id="tab-subscribe"><i class="icon-newspaper"></i><span>Find Us</span></li>
-				</ul> <!-- /tabs -->
-
-				<div class="tab-container">
+</br>
+   			 <!-- /tabs -->
+<a id="play-video" class="video-play-button" href="#" onclick="openNav()">
+  <span></span>
+</a>				<div class="tab-container">
 
 					<!-- tab content - about
    				================================================== -->
@@ -325,9 +586,9 @@ audio {
 					   	<div class="row tab-entry-intro">
 					   		<div class="col-twelve with-bottom-line">
 
-					   			<h1>Get To Know Us.</h1>
+					   			<h1>About Us</h1>
 
-					   			<p class="lead">Zeitgeist is one of the biggest annual college's cultural festival of North India: A fiesta where art, talent, and diversity
+					   			<p class="lead" style="    box-shadow: none !important;">Zeitgeist is one of the biggest annual college's cultural festival of North India: A fiesta where art, talent, and diversity
                                     meets. It has a total footfall of more than 12k &amp; a reach of more than 250
                                     colleges.
 
@@ -349,93 +610,6 @@ audio {
 					</div> <!-- /tab-about -->
 
 
-					<!-- tab content contact
-   				================================================== -->
-					<div id="tab-contact" class="tab-content">
-
-						<div class="tab-entry">
-
-							<div class="row tab-entry-intro">
-					   		<div class="col-twelve with-bottom-line">
-
-					   			<h1>Registration</h1>
-
-					   			<p class="lead">Form needs to be edited and colour scheme changed</p>
-
-					   		</div>
-					   	</div> <!-- /tab-content-intro -->
-
-					   	<div class="row form-wrap tab-entry-content">
-					   		<div class="col-twelve">
-
-					            <!-- form -->
-					            <form name="contactForm" id="contactForm" method="post" action="">
-					      			<fieldset>
-
-					                  <div class="form-field">
-					 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-					                  </div>
-					                  <div class="form-field">
-						      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-						               </div>
-					                  <div class="form-field">
-						     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-						               </div>
-					                  <div class="form-field">
-						                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-						               </div>
-					                 <div class="form-field">
-					                     <button class="submitForm button button-primary large">Submit</button>
-
-					                     <div id="submit-loader">
-					                        <div class="text-loader">Sending...</div>
-					       				      <div class="s-loader">
-													  	<div class="bounce1"></div>
-													  	<div class="bounce2"></div>
-													  	<div class="bounce3"></div>
-													</div>
-												</div><!-- submit-loader -->
-					                  </div>
-
-					      			</fieldset>
-					      		</form> <!-- /form -->
-
-					            <!-- contact-warning -->
-					            <div id="message-warning">
-					            </div>
-					            <!-- contact-success -->
-					      		<div id="message-success">
-					               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-					      		</div>
-
-					         </div> <!-- /col-twelve -->
-					   	</div> <!-- /row contact-form -->
-
-						</div> <!-- /tab-entry -->
-
-					</div> <!-- /tab-contact -->
-
-
-					<!-- tab content - subscribe
-   				================================================== -->
-					<div id="tab-subscribe" class="tab-content">
-
-						<div class="tab-entry">
-
-							<div class="row tab-entry-intro">
-					   		<div class="col-twelve with-bottom-line">
-
-					   			<h1>Our location.</h1>
-
-					   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-					   		</div>
-					   	</div> <!-- /tab-content-intro -->
-<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=iit%20ropar+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google map generator</a></iframe></div><br />
-
-						</div> <!-- /tab-entry -->
-
-					</div> <!-- /tab-subscribe -->
 
 				</div> <!-- /tab-container -->
 
@@ -444,10 +618,10 @@ audio {
 
    </section> <!-- /info -->
 
+   </div><!--
+<div class="section" data-anchor="sec3"  id="section2">
 
-   <!-- CTA Section
-   ================================================== -->
-	<section id="cta">
+  <section id="cta">
 
    	<div class="row cta-wrap">
 
@@ -455,11 +629,6 @@ audio {
 
 	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Space for sponsors</a></h2>
 
-		      <p class="lead">
-		      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
-				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
-				</p>
 
 				<div class="action">
 			      <a class="button large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
@@ -467,44 +636,56 @@ audio {
 
    		</div>
 
-   	</div> <!-- /cta-content -->
+   	</div> 
 
-   </section> <!-- /cta -->
-
-
+   </section>
+</div> -->
+<div class="section" data-anchor="sec4"  id="section3">
    <!-- footer
    ================================================== -->
    <footer>
 
-   	<div class="social-wrap">
-   		<div class="row">
+<footer class="footer-distributed" style="margin-top: -75px;">
 
-	         <ul class="footer-social-list">
-	            <li><a href="#">
-	             	<i class="fa fa-facebook"></i><span>Facebook</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-twitter"></i><span>Twitter</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-pinterest"></i><span>Pinterest</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-instagram"></i><span>Instagram</span>
-	            </a></li>
-	            <li><a href="#">
-	              	<i class="fa fa-dribbble"></i><span>Dribbble</span>
-	            </a></li>
-	         </ul>
+      <div class="footer-right">
 
-			</div> <!-- /row -->
-   	</div> <!-- /social-wrap -->
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+      <div class="footer-left">
+
+        <p class="footer-links">
+          <a class="link-1" href="#">Home</a>
+
+          <a href="#">Sponsors</a>
+
+          <a href="#">Events</a>
+
+          <a href="#">About</a>
+
+          <a href="#">Contact Us</a>
+
+          <a href="#"></a>
+        </p>
+
+        <p>Zeitgeits &copy; 2018</p>
+      </div>
+
+
+
+    </footer>
+
+</br>
 
    	<div class="footer-bottom">
 
-			<div class="footer-logo">
-					<img src="https://pbs.twimg.com/profile_images/615832660779364352/wtZG1GsS.jpg" alt="">
-			</div>
+			
+					<iframe width="500px" height="300px" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=iit%20ropar+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			
 
    		<div class="copyright">
 		     	<span>© Copyright Zeitgeist 2018.</span>
@@ -512,18 +693,40 @@ audio {
 
    	</div> <!-- /footer-bottom -->
 
+
+
    	<div class="back-to-top">
-		 	<a href="#top" class="smoothscroll"><span>Back to Top</span></a>
+		 	<a href="#sec1" class="smoothscroll"><span>Back to Top</span></a>
 		</div>
 
    </footer>
-
+</div>
+   </div>
    <div id="preloader">
     	<div id="loader"></div>
    </div>
 
    <!-- Java Script
    ================================================== -->
+
+<script type="text/javascript">
+            $(document).ready(function(){
+                $("#fullpage").fullpage({
+				anchors: ['sec1', 'sec2', 'sec4'],
+                    keyboardScrolling: true,
+                    option: true,
+                    scrollingSpeed: 700,
+                    scrollBar: false,
+                    // navigation: true,
+                    slidesNavigation: true,
+					scrollOverflow: true,
+					scrollOverflowReset: true,
+					scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
+                
+                });
+                $.fn.fullpage.setAllowScrolling(true);
+            });   
+        </script>
 
    <script>
    // Set the date we're counting down to
@@ -582,13 +785,45 @@ $(this).find('.c_wrap').css({"display":"none",})
   }
 );
 
+
+$('#play-video').on('click', function(e){
+  e.preventDefault();
+  $('#video-overlay').addClass('open');
+  $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');
+});
+
+$('.video-overlay, .video-overlay-close').on('click', function(e){
+  e.preventDefault();
+  close_video();
+});
+
+$(document).keyup(function(e){
+  if(e.keyCode === 27) { close_video(); }
+});
+
+function close_video() {
+  $('.video-overlay.open').removeClass('open').find('iframe').remove();
+};
+
    </script>
 
 
    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
+   
+   <script type="text/javascript" src="js/scrolloverflow.js"></script>
 
+<script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </body>
 
 </html>
