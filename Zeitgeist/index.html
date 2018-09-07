@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Z'18</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 
 <style type="text/css">
 	
@@ -801,7 +802,8 @@ var _createClass = function () {function defineProperties(target, props) {for (v
     {
       this.position = this.position - this.friction;
       var top = this.position;
-      var left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner;
+      if( $(window).width() < 400){var left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner - 230;} 
+      else{var left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner} 
       this.item.css({
         transform: "translateX(" + left + "px) translateY(" + top + "px) scale(" + this.scale + ") rotate(" + this.rotation + (this.position + this.dimensions.height) + "deg)" });
 
@@ -809,7 +811,13 @@ var _createClass = function () {function defineProperties(target, props) {for (v
       if (this.position < -this.dimensions.height) {
         this.destroy();
         return false;
-      } else {
+      } 
+
+if (this.position < -this.dimensions.height) {
+        this.destroy();
+        return false;
+      } 
+      else {
         return true;
       }
     } }, { key: "render", value: function render()
@@ -841,7 +849,7 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var data = [point, rhombus, pentahedron, circle, x];
+var data = [point, rhombus, circle, x];
 
 var isPaused = false;
 window.onblur = function () {
