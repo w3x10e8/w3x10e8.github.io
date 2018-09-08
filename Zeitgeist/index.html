@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Z'18</title>
+	<title></title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -17,6 +17,20 @@
   z-index: 10;
   font-family: "Montserrat";
   font-size: 2em;
+}
+
+
+.timer {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  font-family: "Montserrat";
+  font-size: 2em;
+}
+
+.timer p{
+	margin: 0;
 }
 
 .social i{padding: 0em 0.2em;background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
@@ -54,7 +68,7 @@ body {
   width: 100%;
   height: 100%;
   background: #edf3f8;
-  background: -moz-radial-gradient(center, ellipse cover, #edf3f8 1%, #dee3e8 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #edf3f8 1%, #000 100%);
   background: -webkit-radial-gradient(center, ellipse cover, #edf3f8 1%, #dee3e8 100%);
   background: radial-gradient(ellipse at center, #edf3f8 1%, #dee3e8 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf3f8', endColorstr='#dee3e8',GradientType=1 );
@@ -676,6 +690,32 @@ $tile-height: 300px; */
 
 
 
+.test {
+	float: left;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	overflow-x: hidden;
+}
+.viewport {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	opacity: 0;
+}
+#left {
+	background-image: url(https://drscdn.500px.org/photo/184060871/q%3D80_m%3D2000/v2?webp=true&sig=32c13a3e92a505b6e28ffde49377bd9c8de8c9f9a3e1e0151cd8c206429a717b);
+}
+#center {
+		opacity: 1;
+		background-image: url(https://platinumlist.net/upload/artist/xmohit_chauhan_337-orig.jpg.pagespeed.ic.-0v2iO65kA.jpg);
+}
+#right {
+	background-image: url(https://images.unsplash.com/photo-1484815843298-2c13cbc1b66f?dpr=1&auto=compress,format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=&bg=);
+}
 
 </style>
 
@@ -728,23 +768,17 @@ $tile-height: 300px; */
     text-align: center;
     cursor: pointer;
     font-size: 2.5em;
-    right: 0;
+    z-index: 10;
+    right: 0;position: absolute;
+    left:0;
 ">Previously on Zeitgeist</h1>
 
-<div class="tile kitandace">
-
-  <div class="overlay"></div>
-</div>
-
-<div class="tile niner">
-
-  <div class="overlay"></div>
-</div>
-
-<div class="tile redfin">
-
-  <div class="overlay"></div>
-</div>
+<div class="test" style="margin-top: -100px;">
+	 	<div class="viewport" id="left"></div>
+	 	<div class="viewport" id="center"></div>
+	 	<div class="viewport" id="right"></div>
+	</div>
+<h2>Move your mouse around</h2>
 
 
 
@@ -768,6 +802,11 @@ $tile-height: 300px; */
 </a>
 
 </div>
+
+<div class="timer">
+    <p id="demo" style="font-size:30px"></p>
+</div>
+
 <div class="background" style="overflow: hidden;"></div>
 <div class="title">
   <h3>22 October - 25 October </h3>
@@ -906,6 +945,85 @@ $(".z_events").hover(function () {
 }, function () {
     $(".sidenav").css("background-image","url(./images/wizard_attack.gif);")
 });
+
+
+		var view = $(window),
+			width = view.width(),
+			leftMark = (width/10),
+			centerMark = (width/2),
+			rightMark = (width*0.9),
+			viewport = $('.viewport'),
+			left = viewport.eq(0),
+			center = viewport.eq(1),
+			right = viewport.eq(2);
+
+		$(document).mousemove(function(e) {
+			var mouseX = e.pageX;
+			//left
+			if (mouseX <= leftMark) {
+				left.css('opacity', '1'),
+				center.hide();
+			}
+			//left center
+			else if (mouseX >= leftMark && mouseX <= centerMark) {
+				var opacLeft = Math.pow((leftMark/mouseX), 2),
+						opacCenter = Math.pow((mouseX/centerMark), 2);
+
+				center.show(),
+				left.show(),
+				right.hide();
+
+				left.css('opacity', opacLeft),
+				center.css('opacity', opacCenter);
+			}
+			//center right
+			else if (mouseX >= centerMark && mouseX <= rightMark) {
+				var opacCenter = Math.pow((centerMark/mouseX), 2),
+					opacRight = Math.pow((mouseX/rightMark), 2);
+
+				center.show(),
+				right.show(),
+				left.hide();
+
+				center.css('opacity', opacCenter),
+				right.css('opacity', opacRight);
+			}
+			//right
+			else if (mouseX >= rightMark) {
+				right.css('opacity', '1'),
+				center.hide();
+			}
+		});
+
+
+		// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
 
 </script>
 
