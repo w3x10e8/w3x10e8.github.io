@@ -689,7 +689,7 @@ $tile-height: 300px; */
 }
 @media (min-width: 480px) {
   .redfin .logo {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }
 
@@ -698,6 +698,8 @@ $tile-height: 300px; */
 .title img{width: 92% !important;}
 .title h3{font-size: 12px;}
 .fbutton{margin-top:4em !important;}
+
+.tiles{margin-top: 10px !important;}
 
 
 }
@@ -731,7 +733,6 @@ $tile-height: 300px; */
 	background-image: url(./images/sharry.png);
 }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 @-webkit-keyframes munch {
   0%,
@@ -826,158 +827,6 @@ $tile-height: 300px; */
   }
 }
 
-.cookie-notice {
-  overflow: hidden;
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  margin-top: 110px;
-  opacity: 0.7;
-z-index: 10;
-  padding: 30px;
-  max-width: 360px;
-  background-color: #003765;
-  font: 400 12px/1.2 "Open Sans", sans-serif;
-  line-height: 1.2rem;
-  border-radius: 3px;
-  color: #fff;
-}
-
-.cookie-notice__copy {
-  opacity: 0.9;
-  margin: 20px 0;
-}
-
-.cookie-notice__buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cookie-notice__button {
-  padding: 10px;
-  width: 48%;
-  color: white;
-  opacity: 0.7;
-  background-color: #008afe;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 3px;
-  transition: opacity 0.3s ease;
-}
-.cookie-notice__button:hover {
-  opacity: 1;
-}
-
-.stage-pacman {
-  margin: 0 auto;
-  display: block;
-  width: 50px;
-  -webkit-animation: pacman-move 5s linear infinite;
-          animation: pacman-move 5s linear infinite;
-}
-
-.actor-pacman {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  width: 50px;
-  height: 50px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-animation: bite 0.5s linear infinite;
-          animation: bite 0.5s linear infinite;
-}
-.actor-pacman__body {
-  background-color: white;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-}
-.actor-pacman__mouth {
-  position: absolute;
-  top: -1px;
-  left: 1px;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  clip: rect(0px, 50px, 50px, 25px);
-}
-.actor-pacman__mouth-cut {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  clip: rect(0px, 25px, 50px, 0px);
-  z-index: 2;
-  background-color: #003765;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-animation: munch 0.5s linear infinite;
-          animation: munch 0.5s linear infinite;
-}
-
-.stage-cookies {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 60px);
-  top: 47.5px;
-  left: 30px;
-}
-
-.actor-cookie {
-  width: 15px;
-  height: 15px;
-  background-color: white;
-  opacity: 1;
-  -webkit-animation: cookie-opacity 5s linear infinite;
-          animation: cookie-opacity 5s linear infinite;
-}
-.actor-cookie:nth-child(1) {
-  -webkit-transform: rotate(149deg);
-          transform: rotate(149deg);
-  border-radius: 25%;
-}
-.actor-cookie:nth-child(2) {
-  -webkit-transform: rotate(341deg);
-          transform: rotate(341deg);
-  border-radius: 37%;
-}
-.actor-cookie:nth-child(3) {
-  -webkit-transform: rotate(95deg);
-          transform: rotate(95deg);
-  border-radius: 45%;
-}
-.actor-cookie:nth-child(4) {
-  -webkit-transform: rotate(131deg);
-          transform: rotate(131deg);
-  border-radius: 48%;
-}
-.actor-cookie:nth-child(5) {
-  -webkit-transform: rotate(256deg);
-          transform: rotate(256deg);
-  border-radius: 12%;
-}
-.actor-cookie:nth-child(2) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-}
-.actor-cookie:nth-child(3) {
-  -webkit-animation-delay: 1.6s;
-          animation-delay: 1.6s;
-}
-.actor-cookie:nth-child(4) {
-  -webkit-animation-delay: 2.4s;
-          animation-delay: 2.4s;
-}
-.actor-cookie:nth-child(5) {
-  -webkit-animation-delay: 3.2s;
-          animation-delay: 3.2s;
-}
 
 
 .tiles{    position: absolute;
@@ -1118,9 +967,11 @@ z-index: 10;
 </div>
 
 <div class="social">
- <i class="fab fa-facebook"></i>
- <i class="fab fa-instagram"></i>
- <i class="fab fa-twitter"></i>
+ <a href="https://www.facebook.com/zeitgeist.iitrpr/" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href=" https://www.instagram.com/zeitgeist_iitrpr/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+
+ <a href=" https://twitter.com/zeitgeist_rpr?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+
 
 </a>
 
@@ -1129,7 +980,7 @@ z-index: 10;
 
 <div class="background" style="overflow: hidden;"></div>
 <div class="title">
-	    <h3>22 October - 25 October </h3>
+	    <h3>19 October - 21 October </h3>
 
   <img src="./images/zeit_wide.png" style="width:70%;">
 
