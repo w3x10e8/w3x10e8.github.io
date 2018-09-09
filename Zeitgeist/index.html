@@ -1074,7 +1074,7 @@ window.onfocus = function () {
 }.bind(undefined);
 
 var particles = [];
-
+if( $(window).width() < 400){
 setInterval(function () {
   if (!isPaused) {
     particles.push(
@@ -1084,7 +1084,20 @@ setInterval(function () {
     1 + Math.random() * 3));
 
   }
-}, 200);
+}, 200);}
+
+else{
+	setInterval(function () {
+  if (!isPaused) {
+    particles.push(
+    new Particle(data[randomInt(0, data.length - 1)], {
+      "x": Math.random() * $(window).width(),
+      "y": $(window).height() },
+    1 + Math.random() * 3));
+
+  }
+}, 2000);
+}
 
 function update() {
   particles = particles.filter(function (p) {
