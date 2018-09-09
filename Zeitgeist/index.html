@@ -706,17 +706,6 @@ $tile-height: 300px; */
   }
 }
 
-@media (max-width: 480px) {
-.title{width: 100%; padding: 10px 0px;}
-.title img{width: 92% !important;}
-.title h3{font-size: 12px;}
-.fbutton{margin-top:4em !important;}
-
-.tiles{margin-top: 10px !important;}
-.arrow-down{margin-bottom: 100px;}
-
-}
-
 
 
 .test {
@@ -861,10 +850,57 @@ $tile-height: 300px; */
     -webkit-user-select: none;display: inline-block;}
 
 
+.l-arrow{
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3em;
+    z-index: 10;
+    right: 0;
+    position: absolute;
+    left:10;
+    padding:1em;
+    top:30%;}
+
+
+    .r-arrow{
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3em;
+    z-index: 10;
+    right: 10;
+    position: absolute;
+    left:0;
+    padding:1em;
+    top:30%;}
+
+
+@media (max-width: 480px) {
+.title{width: 100%; padding: 10px 0px;}
+.title img{width: 92% !important;}
+.title h3{font-size: 12px;}
+.fbutton{margin-top:4em !important;}
+
+.tiles{margin-top: 10px !important;}
+.arrow-down{margin-bottom: 100px;}
+.l-arrow{padding: 0.3em;}
+.r-arrow{padding: 0.3em;}
+
+}
+
+
+
 </style>
 
 </head>
-<body>
+<body onscroll="openNav2()">
 
 <div class="timer">
     <p id="demo" style="font-size:30px"></p>
@@ -912,38 +948,10 @@ $tile-height: 300px; */
 	
 
 
-	<p style="
-    color: #fff;
-    text-align: center;
-    display: block;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-align: center;
-    cursor: pointer;
-    font-size: 3em;
-    z-index: 10;
-    right: 0;
-    position: absolute;
-    left:10;
-    padding:1em;
-    top:30%;
-">></p>
+	<p class="l-arrow">></p>
 	
 	
-	<p style="
-    color: #fff;
-    text-align: center;
-    display: block;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-align: center;
-    cursor: pointer;
-    font-size: 3em;
-    z-index: 10;
-    right: 10;
-    position: absolute;
-    left:0;
-    padding:1em;
-    top:30%;
-"><</p>
+	<p class="r-arrow"><</p>
 
 <div class="tiles" style="position: absolute;z-index: 99;">
 	
@@ -1224,6 +1232,14 @@ var countdownfunction = setInterval(function() {
         document.getElementById("demo").innerHTML = "Enjoy the fiesta";
     }
 }, 1000);
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 100){
+            openNav2();
+        }
+    });
+});
 
 </script>
 
