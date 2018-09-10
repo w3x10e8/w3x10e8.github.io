@@ -847,6 +847,12 @@ $tile-height: 300px; */
 }
 
 
+.random_gif{    position: absolute;
+    max-width: 200px;
+    left: 0;
+    opacity: 0.5;
+    bottom: 0;
+    padding: 5em;}
 
 .tiles{    position: absolute;
     z-index: 99;
@@ -910,7 +916,7 @@ $tile-height: 300px; */
 .arrow-down{margin-bottom: 100px;}
 .l-arrow{padding: 0.3em;}
 .r-arrow{padding: 0.3em;}
-
+.random_gif{display: none;}
 }
 
 
@@ -962,7 +968,6 @@ $tile-height: 300px; */
 
 
 
-
 	
 
 
@@ -995,6 +1000,10 @@ $tile-height: 300px; */
 </div>
 
 <div id="mySidenav" class="sidenav">
+
+<img src="./images/mario.gif" class="random_gif">
+
+
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#" class="z_home">Home</a>
   <a href="#" class="z_about">About Us</a>
