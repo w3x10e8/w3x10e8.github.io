@@ -729,10 +729,10 @@ $tile-height: 300px; */
 }
 #center {
 		opacity: 1;
-		background-image: url(./images/mohit_final.PNG);
+		background-image: url(./images/mohit_final.png);
 }
 #right {
-	background-image: url(./images/sharry_final.PNG);
+	background-image: url(./images/sharry_final.png);
 }
 
 
@@ -836,21 +836,17 @@ $tile-height: 300px; */
     left: 0;
     right: 0;
     margin-top: 160px;}
-.tiles .ctile{    position: relative;
-    padding: 20px;
+.tiles .ctile{   position: relative;
+    /* padding-left: 50px; */
+    padding: 30px 30px 30px 20px;
     color: #fff;
-    background: hsla(0,0%,100%,.4);
+    background: #0000;
     margin: 25px;
-    font-size: 24px;
+    font-size: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 155px;
-    height: 89px;
-    text-align: center;
-    border-radius: 2px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    user-select: none;
-    -webkit-user-select: none;
-      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
+    background-image: url(https://img.clipartxtras.com/3f72c553748d8363e0bc4526eb06ea74_tv-clipart-old-fashioned-tv-clipart_1017-591.svg);
     display: inline-block;}
 .tiles .ctile:hover{
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -964,7 +960,7 @@ $tile-height: 300px; */
 	<div class="wrap">
 		<div class="ctile">75+ <br>Events</div>
 		<div class="ctile">300+ <br>Colleges</div>
-		<div class="ctile">12000+ Footfall</div>
+		<div class="ctile">12000+ <br>Footfall</div>
 	</div>
 
 
@@ -1172,6 +1168,8 @@ $(".z_events").hover(function () {
 			center = viewport.eq(1),
 			right = viewport.eq(2);
 
+if( $(window).width() > 400){
+			
 		$(document).mousemove(function(e) {
 			var mouseX = e.pageX;
 			//left
@@ -1210,6 +1208,12 @@ $(".z_events").hover(function () {
 			}
 		});
 
+}
+
+
+else{
+	
+}
 
 		// Set the date we're counting down to
 var countDownDate = new Date("Oct 18, 2018 24:00:00").getTime();
@@ -1239,13 +1243,7 @@ var countdownfunction = setInterval(function() {
     }
 }, 1000);
 
-$(document).ready(function(){
-    $(window).scroll(function(){
-        if ($(window).scrollTop() > 100){
-            openNav2();
-        }
-    });
-});
+
 
 </script>
 
